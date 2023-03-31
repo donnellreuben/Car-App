@@ -26,15 +26,15 @@ class CarsController < ApplicationController
     @car.year = params[:year]
     @car.make = params[:make]
     @car.model = params[:model]
-    @car.image_url = params[:image]
+    @car.image_url = params[:image_url]
     @car.save
     render :show
   end
 
   def destroy
     @car = Car.find(params[:id])
-
-
+    @car.destroy
+    render html: "This car got into a car accident and was considered a total loss."
   end
 end
 
