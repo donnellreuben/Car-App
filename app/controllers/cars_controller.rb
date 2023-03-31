@@ -6,8 +6,13 @@ class CarsController < ApplicationController
   end
 
   def create
-    render html: "Test"
-
+    @car = Car.create(
+      year: params[:year],
+      make: params[:make],
+      model: params[:model],
+      image_url: params[:image_url]
+    )
+    render :show
   end
 
 end
