@@ -15,5 +15,10 @@ class CarsController < ApplicationController
     render :show
   end
 
+  def show
+    @car = Car.find(params[:id]) #I like this code more, easier to remember
+    render :show
+  end
+
 end
 
