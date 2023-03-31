@@ -20,5 +20,14 @@ class CarsController < ApplicationController
     render :show
   end
 
+  def update
+    @car = Car.find(params[:id])
+    @car.year = params[:year]
+    @car.make = params[:make]
+    @car.model = params[:model]
+    @car.image_url = params[:image]
+    @car.save
+    render :show
+  end
 end
 
