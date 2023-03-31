@@ -16,7 +16,8 @@ class CarsController < ApplicationController
   end
 
   def show
-    @car = Car.find(params[:id]) #I like this code more, easier to remember
+    @car = Car.find(params[:id]) 
+    #I like this code more, easier to remember. Find_by is more flexible as it allows you to specify the exact year, make or model
     render :show
   end
 
@@ -28,6 +29,12 @@ class CarsController < ApplicationController
     @car.image_url = params[:image]
     @car.save
     render :show
+  end
+
+  def destroy
+    @car = Car.find(params[:id])
+
+
   end
 end
 
